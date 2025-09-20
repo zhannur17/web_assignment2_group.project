@@ -1,0 +1,214 @@
+/* === Step 2. Selectors === */
+
+/* Element selector */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    color: #1a2530;
+}
+
+/* Class selector */
+.banner-text {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ID selector */
+#top-banner {
+    position: relative;
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#top-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4); 
+}
+
+#top-banner h1,
+#top-banner p {
+    position: relative; 
+}
+
+
+/* Descendant selector */
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* === Step 3. Typography === */
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f7;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+/* === Step 4. Colors and Backgrounds === */
+section {
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* === Step 5. Layout & Box Model === */
+.content-box {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* === Step 6. Navigation Menu === */
+nav {
+    background-color: #2c3e50;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+/* === Step 7. Image Styling === */
+img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
+
+.image {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
+
+/* === Step 8. Forms === */
+form input, form textarea, form button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2c3e50;
+    transition: 0.3s;
+}
+
+/* === Step 9. Advanced Styling === */
+h2::before {
+    content: "✈️ ";
+}
+
+footer {
+    background-color: #2c3e50;       /* тёмный фон */
+    color: white;                    /* белый текст */
+    text-align: center;              /* выравнивание по центру */
+    padding: 20px 10px;              /* внутренние отступы */
+    margin-top: 30px;                /* отступ сверху */
+    font-size: 0.9rem;               /* чуть меньше текст */
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+footer p {
+    margin: 5px 0;                   /* убираем лишние отступы */
+}
+
+/* Небольшой эффект */
+footer p:hover {
+    color: #ffcc00;                 
+    transition: 0.3s;
+}
+
+/* Card layout */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Destinations Grid */
+.destinations-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.destination-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.destination-card h3 {
+    margin: 10px 0 5px;
+    color: #2c3e50;
+}
+
+.destination-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Hover effect */
+.destination-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
