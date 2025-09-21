@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #1a2530;
+  line-height: 1.6;
+}
+
+/* Шапка */
+.guide-header {
+  background: linear-gradient(135deg, #1a2530, #2e3c4b);
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.guide-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.guide-header h1 i {
+  color: #f4b400;
+  margin-right: 8px;
+}
+
+.guide-header p {
+  margin: 10px 0 0;
+  font-size: 1.1rem;
+  color: #d0d3d6;
+}
+
+.guide-photo {
+  width: 90%;        /* ширина блока меньше 100% */
+  height: 370px;     /* высота картинки */
+  overflow: hidden;
+  margin: 20px auto; /* авто по бокам = центрируется */
+  border-radius: 12px; /* (по желанию) скруглить углы */
+}
+
+.guide-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: brightness(85%);
+}
+
+
+
+/* Контейнер */
+.container {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Раздел */
+.advice-section {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.advice-section h2 {
+  color: #1a2530;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  border-left: 6px solid #f4b400;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.advice-section h2 i {
+  color: #f4b400;
+}
+
+.advice-section p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  text-align: left;
+}
+
+.advice-section p i {
+  color: #f4b400; /* иконки жёлтые для акцента */
+  margin-right: 8px;
+}
+
+/* Изображения над разделами */
+.advice-img {
+  display: block;
+  margin: 0 auto 35px; /* центрируем и даём отступ снизу */
+  max-width: 160px;
+  height: auto;
+}
+
+/* Совет дня */
+.tip-of-day {
+  border: 2px dashed #f4b400;
+  background: #fff8e5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.tip-of-day h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #1a2530;
+}
+
+.tip-of-day h3 i {
+  color: #f4b400;
+  margin-right: 8px;
+}
+
+.tip-of-day p {
+  margin: 10px 0 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Футер */
+.guide-footer {
+  background: #1a2530;
+  text-align: center;
+  padding: 20px;
+  color: #bbbbbb;
+  font-size: 0.95rem;
+}
