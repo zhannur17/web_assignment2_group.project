@@ -212,3 +212,406 @@ footer p:hover {
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
+/*Gulnaz*/
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #1a2530;
+  line-height: 1.6;
+}
+
+/* Шапка */
+.guide-header {
+  background: linear-gradient(135deg, #1a2530, #2e3c4b);
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.guide-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.guide-header h1 i {
+  color: #f4b400;
+  margin-right: 8px;
+}
+
+.guide-header p {
+  margin: 10px 0 0;
+  font-size: 1.1rem;
+  color: #d0d3d6;
+}
+
+.guide-photo {
+  width: 80%;        /* ширина блока меньше 100% */
+  height: 400px;     /* высота картинки */
+  overflow: hidden;
+  margin: 20px auto; /* авто по бокам = центрируется */
+  border-radius: 12px; /* (по желанию) скруглить углы */
+}
+
+.guide-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: brightness(85%);
+}
+
+
+
+/* Контейнер */
+.container {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Раздел */
+.advice-section {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.advice-section h2 {
+  color: #1a2530;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  border-left: 6px solid #f4b400;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.advice-section h2 i {
+  color: #f4b400;
+}
+
+.advice-section p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  text-align: left;
+}
+
+.advice-section p i {
+  color: #f4b400; /* иконки жёлтые для акцента */
+  margin-right: 8px;
+}
+
+/* Изображения над разделами */
+.advice-img {
+  display: block;
+  margin: 0 auto 35px; /* центрируем и даём отступ снизу */
+  max-width: 160px;
+  height: auto;
+}
+
+/* Совет дня */
+.tip-of-day {
+  border: 2px dashed #f4b400;
+  background: #fff8e5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.tip-of-day h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #1a2530;
+}
+
+.tip-of-day h3 i {
+  color: #f4b400;
+  margin-right: 8px;
+}
+
+.tip-of-day p {
+  margin: 10px 0 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Футер */
+.guide-footer {
+  background: #1a2530;
+  text-align: center;
+  padding: 20px;
+  color: #bbbbbb;
+  font-size: 1 rem;
+}
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9fafb;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.header p {
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.search-box {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 0 1rem;
+  border: none;
+  background: #111827;
+  color: white;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-header i {
+  font-size: 2rem;
+  color: #16a34a;
+  margin-bottom: 0.5rem;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+}
+
+.card-header p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Support boxes */
+.support-box {
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.support-box h3 {
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.support-box p {
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+}
+
+.faq-list li {
+  margin: 0.4rem 0;
+  color: #333;
+}
+
+.faq-list i {
+  margin-right: 0.5rem;
+  color: #0077cc;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #16a34a;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.btn.secondary {
+  background: white;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+}
+
+.btn.submit {
+  width: 100%;
+  background: #111827;
+  color: white;
+  margin-top: 1rem;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Footer */
+.footer {
+  background-color: #f5f6f8;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 15px;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #111;
+}
+
+.footer-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #008060; /* зеленоватый при наведении */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  color: #666;
+  font-size: 14px;
+}
+/* Навигация */
+.navbar {
+  background: #1a2530;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #f4b400;
+}
+
