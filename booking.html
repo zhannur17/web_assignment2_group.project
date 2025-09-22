@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Booking - Travel Guide</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Навигация -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="destination.html">Destinations</a>
+    <a href="packages.html">Packages</a>
+    <a href="offers.html">Special Offers</a>
+    <a href="guide.html">Guide</a>
+    <a href="booking.html">Booking</a>
+    <a href="support.html">Support</a>
+    <a href="aboutus.html">About Us</a>
+  </nav>
+
+  <!-- Контент -->
+  <section class="content-box">
+    <h1>Book Your Trip</h1>
+    <p>Fill out the form below to book your dream journey with Travel Guide Agency.</p>
+
+    <form class="booking-form">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="destination">Destination:</label>
+      <select id="destination" name="destination" required>
+        <option value="">-- Select Destination --</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="sydney">Sydney</option>
+        <option value="safari">Safari</option>
+        <option value="paris">Paris</option>
+        <option value="maldives">Maldives</option>
+        <option value="istanbul">Istanbul</option>
+        <option value="dubai">Dubai</option>
+        <option value="cairo">Cairo</option>
+        <option value="bali">Bali</option>
+        <option value="antalya">Antalya</option>
+        <option value="newyork">New York</option>
+        <option value="rome">Rome</option>
+      </select>
+
+      <label for="date">Travel Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="people">Number of Travelers:</label>
+      <input type="number" id="people" name="people" min="1" max="20" value="1" required />
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+</body>
+</html>
