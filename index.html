@@ -7,23 +7,37 @@
 </head>
 <body>
 
-   <nav>
-        <a href="home.html">Home</a>
-        <a href="destination.html">Destinations</a>
-        <a href="packages.html">Packages</a>
-        <a href="offers.html">Special Offers</a>
-        <a href="guide.html">Guide</a>
-        <a href="booking.html">Booking</a>
-        <a href="support.html">Support</a>
-        <a href="aboutus.html">About Us</a>
-    </nav>
+     <header class="navbar">
+    <div class="logo">Tripify</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+</header>
 
-    <section id="top-banner">
+<div class="grid-layout">
+    <aside class="sidebar">
+        <h3>Sidebar</h3>
+        <ul>
+            <li><a href="packages.html">Popular Tours</a></li>
+            <li><a href="destination.html">Top Destinations</a></li>
+            <li><a href="aboutus.html">Blog</a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+         <section id="top-banner">
         <h1>Explore the World with Us</h1>
         <p class="banner-text">Find your dream destination easily</p>
     </section>
 
-    <section class="content-box">
+
+ <section class="content-box">
         <h2>Quick Tour Search</h2>
         <form>
             <input type="text" placeholder="Enter destination">
@@ -32,13 +46,27 @@
         </form>
     </section>
 
-    <section>
-        <h2>Featured Destination</h2>
-        <img src="images/beach.png" alt="Beach photo">
-        <img src="images/mountain.png" alt="Mountain" class="image">
-        <img src="images/safari.png" alt="Safari" class="image">
-        <img src="images/city.png" alt="City" class="image">
-    </section>
+    <section class="card-row">
+    <div class="card">
+        <img src="images/beach.png" alt="Beach">
+        <h3>Beach Paradise</h3>
+        <p>Relax on sunny beaches with turquoise waters.</p>
+        <button class="btn primary">Book Now</button>
+    </div>
+    <div class="card">
+        <img src="images/mountain.png" alt="Mountain">
+        <h3>Mountain Adventure</h3>
+        <p>Explore majestic mountains and scenic hiking trails.</p>
+        <button class="btn primary">Book Now</button>
+    </div>
+    <div class="card">
+        <img src="images/safari.png" alt="Safari">
+        <h3>Safari Tour</h3>
+        <p>Experience wildlife and nature in its purest form.</p>
+        <button class="btn primary">Book Now</button>
+    </div>
+</section>
+
 
     
     <section class="content-box">
@@ -64,7 +92,7 @@
         </div>
     </section>
 
-     <footer>
+     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2025 Travel Agency | All Rights Reserved</p>
             <p>Team Members: Zhannur, Symbat, Ayazhan, Gulnaz.</p>
@@ -75,8 +103,12 @@
             </div>
         </div>
     </footer>
+    </main>
+
+</div>
 </body>
 </html>
+
 
 
 
