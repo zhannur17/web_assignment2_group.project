@@ -73,3 +73,69 @@ if (bgButton) {
     colorIndex = (colorIndex + 1) % colors.length;
   });
 }
+/* GULNAZZZZZZZZZZZZ */
+// main.js
+
+// 1. Аккордеон для FAQs или Контент-секций
+document.addEventListener("DOMContentLoaded", function() {
+  const accordions = document.querySelectorAll('.advice-section h2'); 
+
+  accordions.forEach(accordion => {
+    accordion.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+});
+
+// 2. Всплывающее окно для формы подписки
+document.addEventListener("DOMContentLoaded", function() {
+  const popupButton = document.querySelector('.popup-btn');  // кнопка для открытия
+  const popupForm = document.querySelector('.popup-form'); // сама форма
+  const closeButton = document.querySelector('.close-btn'); // кнопка закрытия
+
+  popupButton.addEventListener('click', function() {
+    popupForm.style.display = 'block';
+  });
+
+  closeButton.addEventListener('click', function() {
+    popupForm.style.display = 'none';
+  });
+
+  // Закрытие формы при клике за пределы окна
+  window.addEventListener('click', function(event) {
+    if (event.target === popupForm) {
+      popupForm.style.display = 'none';
+    }
+  });
+});
+
+// 3. Изменение фона с помощью кнопки
+document.addEventListener("DOMContentLoaded", function() {
+  const colorButton = document.querySelector('.change-bg-btn');
+  const colors = ['#f4f4f4', '#ffeb3b', '#4caf50', '#2196f3', '#9c27b0'];
+
+  colorButton.addEventListener('click', function() {
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  });
+});
+
+// 4. Отображение текущей даты и времени
+document.addEventListener("DOMContentLoaded", function() {
+  const dateElement = document.querySelector('.date-time');
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleString();
+
+  dateElement.textContent = `Current Date and Time: ${formattedDate}`;
+});
+// main.js
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Изменение фона с помощью кнопки
+  const colorButton = document.querySelector('.change-bg-btn');
+  const colors = ['#f4f4f4', '#ffeb3b', '#4caf50', '#2196f3', '#9c27b0'];
+
+  colorButton.addEventListener('click', function() {
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  });
+});
