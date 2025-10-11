@@ -1,48 +1,42 @@
+/* === Task 1. Form Validation === */
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
-  
   if (form) {
     form.addEventListener("submit", (e) => {
-      e.preventDefault(); 
-
-      const requiredInputs = form.querySelectorAll("input[required]");
+      e.preventDefault();
+      const inputs = form.querySelectorAll("input[required]");
       let isValid = true;
 
-      
-      requiredInputs.forEach(input => {
+      inputs.forEach((input) => {
         if (!input.value.trim()) {
-          input.style.border = "2px solid red"; 
           isValid = false;
+          input.style.border = "2px solid red";
         } else {
-          input.style.border = "1px solid #ccc"; 
+          input.style.border = "1px solid #ccc";
         }
       });
 
-    
       const email = form.querySelector("input[type='email']");
-      if (email && !email.value.includes("@")) {
-        email.style.border = "2px solid red"; 
-        alert("Please enter a valid email address");
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
         isValid = false;
+        email.style.border = "2px solid red";
+        alert("Please enter a valid email address");
       }
 
       const password = form.querySelector("input[type='password']");
       if (password && password.value.length < 6) {
-        password.style.border = "2px solid red"; 
-        alert("Password must be at least 6 characters long");
         isValid = false;
+        alert("Password must be at least 6 characters long");
       }
 
       if (isValid) {
         alert("Form submitted successfully!");
-        form.reset(); 
+        form.reset();
       } else {
         alert("Please fill all fields correctly.");
       }
     });
   }
-});
-
 
 
   /* === Task 3. Popup Subscription Form === */
@@ -67,12 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const colors = ["#ffefd5", "#e0ffff", "#ffe4e1", "#f0fff0", "#fafad2"];
   let colorIndex = 0;
 
-if (bgButton) {
-  bgButton.addEventListener("click", () => {
-    document.body.style.backgroundColor = colors[colorIndex];
-    colorIndex = (colorIndex + 1) % colors.length;
-  });
-}
+  if (bgButton) {
+    bgButton.addEventListener("click", () => {
+      document.body.style.backgroundColor = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+    });
+  }
+});
+
 /* GULNAZZZZZZZZZZZZ */
 // main.js
 
