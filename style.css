@@ -777,6 +777,35 @@ h1, h2, h3 {
 }
 
 
+/* Symbat */
+
+.accordion-header {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  background-color: #fff;
+  border-left: 2px solid #db331c;
+}
+
+#change-bg {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #d61f90;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#change-bg:hover {
+  background-color: #bc3e3e;
+}
 
 
 
