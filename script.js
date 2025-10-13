@@ -135,3 +135,28 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
   });
 });
+
+
+/* Symbat */ 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const sidebarHeaders = document.querySelectorAll('.accordion-header');
+  sidebarHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const bgButton = document.getElementById("change-bg");
+  const colors = ["#fff0f5", "#1aa61aff", "#b3a41eff", "#1caee8ff", "#b82121ff"]; 
+  let index = 0;
+
+  bgButton.addEventListener("click", () => {
+    document.body.style.backgroundColor = colors[index];
+    index = (index + 1) % colors.length; 
+  });
+});
