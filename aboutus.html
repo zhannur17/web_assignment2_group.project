@@ -1,79 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Us - Travel Guide</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Tripify Travel Guide</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #ffffff;
+      transition: background-color 0.5s ease;
+    }
+
+    h1, h2, h3 {
+      color: #007bff;
+    }
+
+    .faq-section {
+      margin-top: 50px;
+    }
+
+    .faq-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      padding: 15px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+    }
+
+    .faq-item:hover {
+      background: #e9ecef;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    #dateTime {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
 <body>
-   <header class="navbar">
-        <div class="logo">Tripify</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="destination.html">Destinations</a></li>
-            <li><a href="packages.html">Packages</a></li>
-            <li><a href="offers.html">Special Offers</a></li>
-            <li><a href="guide.html">Guide</a></li>
-            <li><a href="booking.html">Booking</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-warning" href="#">Tripify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="destination.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="offers.html">Special Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link active" href="aboutus.html">About Us</a></li>
         </ul>
-    </header>
+      </div>
+    </div>
+  </nav>
 
-    <div class="grid-layout">
-    <aside class="sidebar">
-        <h3>Sidebar</h3>
-        <ul>
-           <li>About Us</li>
-           <li>Our Mission</li>
-           <li>Our Team</li>
-        </ul>
-    </aside>
-    <main class="main-content">
+  <!-- ✅ Main About Section -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">About Tripify</h1>
+    <p class="text-center text-muted mb-5">
+      We are a passionate team dedicated to creating unforgettable travel experiences across the globe.
+    </p>
 
-    <section class="content-box">
-        <h1>About Us</h1>
-        <p>Welcome to Travel Guide Agency! We are passionate about helping you explore the world with ease and confidence.</p>
+    <!-- Your existing images -->
+    <div class="row text-center mb-5">
+      <div class="col-md-4 mb-4">
+        <img src="images/team1.jpg" alt="Team member" class="img-fluid rounded shadow-sm">
+        <h5 class="mt-2">Zhannur Meirambek</h5>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="images/team2.jpg" alt="Team member" class="img-fluid rounded shadow-sm">
+        <h5 class="mt-2">Symbat Zhuman</h5>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="images/team3.jpg" alt="Team member" class="img-fluid rounded shadow-sm">
+        <h5 class="mt-2">Ayazhan Orynbasar</h5>
+      </div>
+    </div>
 
-        <h2>Our Mission</h2>
-        <p>To provide personalized travel experiences that create lasting memories and inspire adventure.</p>
+    <!-- ✅ FAQ Accordion -->
+    <section class="faq-section">
+      <h2 class="text-center mb-4">FAQ</h2>
 
-        <h2>Our Team</h2>
-        <div class="card-container">
-            <div class="card">
-                <img src="images/ayazhan.png.png" alt="Ayazhan" />
-                <h3>Ayazhan Orynbasar</h3>
-                <p>CEO & CO Founder</p>
-            </div>
-            <div class="card">
-                <img src="images/zhannur.png.png" alt="Zhannur" />
-                <h3>Zhannur Meirambek </h3>
-                <p>CEO</p>
-            </div>
-            <div class="card">
-                <img src="images/gulnaz.png.png" alt="Gulnaz" />
-                <h3>Gulnaz Nurseit</h3>
-                <p>Customer Support</p>
-            </div>
-            <div class="card">
-                <img src="images/symbat.png.png" alt="Symbat" />
-                <h3>Symbat Zhuman</h3>
-                <p>Travel Guide</p>
-            </div>
+      <div class="faq-item">
+        <h5>What services does Tripify offer?</h5>
+        <div class="faq-answer">
+          <p>Tripify provides travel planning, destination guides, booking assistance, and exclusive vacation packages.</p>
         </div>
+      </div>
+
+      <div class="faq-item">
+        <h5>How can I modify or cancel my booking?</h5>
+        <div class="faq-answer">
+          <p>You can modify or cancel your booking through your profile page or contact our 24/7 support team for help.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h5>Do you offer group discounts?</h5>
+        <div class="faq-answer">
+          <p>Yes! We provide special discounts for groups of 5 or more travelers. Contact us for more details.</p>
+        </div>
+      </div>
     </section>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Travel Agency | All Rights Reserved</p>
-            <p>Team Members: Zhannur, Symbat, Ayazhan, Gulnaz.</p>
-            <div class="socials">
-                <a href="#">🌐</a>
-                <a href="#">📷</a>
-                <a href="#">✉️</a>
-            </div>
-        </div>
-    </footer>
-    </main>
+
+    <!-- ✅ Date and Time -->
+    <div class="text-center mt-4">
+      <p id="dateTime"></p>
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+      <p>&copy; 2025 Tripify Travel Agency | All Rights Reserved</p>
+      <p>Team Members: Zhannur Meirambek, Symbat Zhuman, Ayazhan Orynbasar, Gulnaz Nurseit</p>
+    </div>
+  </footer>
+
+  <!-- ✅ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ✅ Custom JavaScript -->
+  <script>
+    // Task 2: Accordion (FAQ)
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Task 5: Display Current Date and Time
+    function updateDateTime() {
+      const now = new Date();
+      const options = { month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+      document.getElementById('dateTime').textContent = now.toLocaleString('en-US', options);
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+  </script>
 </body>
-</html> 
+</html>
