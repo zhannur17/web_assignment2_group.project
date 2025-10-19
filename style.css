@@ -807,6 +807,26 @@ h1, h2, h3 {
   background-color: #bc3e3e;
 }
 
+/* New Zhannur */
+.star {
+  font-size: 2rem;
+  color: gray;            
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.star.active {
+  color: gold;            
+}
+
+.dark-theme {
+  background-color: #000000;
+  color: white;
+}
+
+
+
+
 
 
 
