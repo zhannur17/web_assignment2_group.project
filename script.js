@@ -160,3 +160,82 @@ document.addEventListener("DOMContentLoaded", function() {
     index = (index + 1) % colors.length; 
   });
 });
+
+/* New Zhannur */
+document.addEventListener("DOMContentLoaded", () => {
+  const stars = document.querySelectorAll(".star");
+  const ratingValue = document.getElementById("rating-value");
+
+  stars.forEach((star, index) => {
+    star.addEventListener("click", () => {
+      stars.forEach(s => s.classList.remove("active"));
+      for (let i = 0; i <= index; i++) {
+        stars[i].classList.add("active");
+      }
+      ratingValue.textContent = `Your rating: ${index + 1}/5`;
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const messageButton = document.getElementById("update-message");
+  const messageParagraph = document.getElementById("message");
+
+  messageButton.addEventListener("click", () => {
+    messageParagraph.textContent = "Thank you for visiting Tripify!";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  //READ MORE TOGGLE
+  const readMoreBtn = document.querySelector("#read-more-btn");
+  const moreText = document.querySelector("#more-text");
+
+  readMoreBtn.addEventListener("click", () => {
+    if (moreText.style.display === "none" || moreText.style.display === "") {
+      moreText.style.display = "block";
+      readMoreBtn.textContent = "Read Less";
+    } else {
+      moreText.style.display = "none";
+      readMoreBtn.textContent = "Read More";
+    }
+  });
+
+  //RANDOM FACT FETCH
+  const factBtn = document.querySelector("#fact-btn");
+  const factText = document.querySelector("#fact-text");
+
+  const travelFacts = [
+    "The shortest flight in the world lasts only 57 seconds (between Westray and Papa Westray in Scotland).",
+    "Japan has more than 5 million vending machines across the country.",
+    "The Great Wall of China is not visible from space with the naked eye.",
+    "Iceland has no mosquitoes!",
+    "France is the most visited country in the world.",
+  ];
+
+  factBtn.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * travelFacts.length);
+    factText.textContent = travelFacts[randomIndex];
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const showBtn = document.getElementById("showTime");
+  const out = document.getElementById("timeDisplay");
+  if (!showBtn || !out) return;
+
+  showBtn.addEventListener("click", () => {
+    out.textContent = new Date().toLocaleTimeString();
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "t" || e.key === "T") {
+    document.body.classList.toggle("dark-theme");
+  }
+});
+
+
+
+
+
