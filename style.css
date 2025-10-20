@@ -824,6 +824,20 @@ h1, h2, h3 {
   color: white;
 }
 
+/* Сымбат */
+#offers-page .card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 250px;
+    box-shadow: 0 4px 8px blueviolet;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#offers-page .card:hover {
+    transform: translateY(-5px);
+    background-color: pink; 
+}
 
 
 
