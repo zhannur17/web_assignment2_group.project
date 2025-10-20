@@ -288,6 +288,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(even
 
 
 /* Symbat */ 
+
 document.addEventListener("DOMContentLoaded", function() {
   const languageSelector = document.getElementById("language-selector");
   
@@ -376,10 +377,8 @@ document.addEventListener("DOMContentLoaded", function() {
       "more-details": "Толығырақ",
     }
   };
-
   
-  
-function changeLanguage(lang) {
+  function changeLanguage(lang) {
     const elements = document.querySelectorAll("[data-translate]");
     elements.forEach(element => {
       const key = element.getAttribute("data-translate");
