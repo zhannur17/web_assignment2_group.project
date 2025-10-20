@@ -235,6 +235,58 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+/* Gulnaz */ 
+document.querySelector('.contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Отменяем стандартное поведение формы
+
+  // Собираем данные формы
+  const formData = new FormData(this);
+
+  // Симуляция отправки данных на сервер (для теста без реального сервера)
+  setTimeout(() => {
+    // После 2 секунд симуляции (можно изменить) показываем сообщение об успехе
+    document.getElementById('successMessage').style.display = 'block';
+  }, 2000);
+});
+
+
+// Функция для отображения приветствия в зависимости от времени суток
+function getGreeting() {
+  const currentHour = new Date().getHours(); // Получаем текущий час
+  let greeting;
+
+  switch (true) {
+    case (currentHour < 12):
+      greeting = 'Good Morning!'; // Утро
+      break;
+    case (currentHour < 18):
+      greeting = 'Good Afternoon!'; // День
+      break;
+    default:
+      greeting = 'Good Evening!'; // Вечер
+      break;
+  }
+
+  // Выводим приветствие в элемент с id="greeting"
+  document.getElementById('greeting').textContent = greeting;
+}
+
+
+document.addEventListener('DOMContentLoaded', getGreeting);
+
+document.querySelector('.contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Отменяем стандартное поведение формы
+  const formData = new FormData(this);
+
+  setTimeout(() => {
+    // После 2 секунд симуляции показываем сообщение об успехе
+    document.getElementById('successMessage').style.display = 'block';
+    const successSound = document.getElementById('successSound');
+    successSound.play(); // Воспроизводим звук
+  }, 2000);
+});
+
+
 
 
 
