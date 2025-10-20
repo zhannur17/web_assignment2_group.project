@@ -377,7 +377,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-  function changeLanguage(lang) {
+  
+  
+function changeLanguage(lang) {
     const elements = document.querySelectorAll("[data-translate]");
     elements.forEach(element => {
       const key = element.getAttribute("data-translate");
