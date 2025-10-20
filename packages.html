@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="grid-layout">
-    
     <header class="header navbar">
       <div class="logo">Tripify</div>
       <ul class="nav-links">
@@ -22,77 +20,77 @@
         <li><a href="support.html">Support</a></li>
         <li><a href="aboutus.html">About Us</a></li>
       </ul>
+
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="kk">Қазақша</option>
+      </select>
     </header>
 
     <aside class="sidebar">
-      <h3>Categories</h3>
+      <h3 data-translate="categories">Categories</h3>
       <ul>
         <li class="accordion-item">
-          <div class="accordion-header">Family Tours</div>
+          <div class="accordion-header" data-translate="family-tours">Family Tours</div>
           <div class="accordion-content">
-            <p>Trips perfect for families with kids, safe beaches, and family-friendly hotels.</p>
+            <p data-translate="family-desc">Trips perfect for families with kids, safe beaches, and family-friendly hotels.</p>
           </div>
         </li>
         <li class="accordion-item">
-          <div class="accordion-header">Romantic Tours</div>
+          <div class="accordion-header" data-translate="romantic-tours">Romantic Tours</div>
           <div class="accordion-content">
-            <p>Unforgettable moments for couples with romantic dinners and spa treatments.</p>
+            <p data-translate="romantic-desc">Unforgettable moments for couples with romantic dinners and spa treatments.</p>
           </div>
         </li>
         <li class="accordion-item">
-          <div class="accordion-header">Beach Tours</div>
+          <div class="accordion-header" data-translate="beach-tours">Beach Tours</div>
           <div class="accordion-content">
-            <p>Relax on the best beaches with crystal clear water and tropical climate.</p>
+            <p data-translate="beach-desc">Relax on the best beaches with crystal clear water and tropical climate.</p>
           </div>
         </li>
         <li class="accordion-item">
-          <div class="accordion-header">Cultural Tours</div>
+          <div class="accordion-header" data-translate="cultural-tours">Cultural Tours</div>
           <div class="accordion-content">
-            <p>Discover museums, landmarks, and cultural events around the world.</p>
+            <p data-translate="cultural-desc">Discover museums, landmarks, and cultural events around the world.</p>
           </div>
         </li>
       </ul>
     </aside>
 
-    <main class="main-content">
+    <main class="main-content" id="offers-page">
       <section>
-        <h1>Our Tour Packages</h1>
-        <p style="text-align: center; color: #9b289d;">
-          Choose the perfect trip for yourself and your loved ones
-        </p>
+        <h1 data-translate="our-tour-packages">Our Tour Packages</h1>
+        <p style="text-align: center; color: #9b289d;" data-translate="choose-perfect-trip">Choose the perfect trip for yourself and your loved ones</p>
       </section>
-
       <section class="card-container">
         <div class="card">
           <img src="images/family.jpg" alt="Family Tour">
-          <h3>Family Vacation</h3>
-          <p>Perfect holidays for the whole family with kids’ entertainment, safe beaches, and family-friendly hotels.</p>
-          <p><strong>From $600 / family</strong></p>
-          <button>More details</button>
+          <h3 data-translate="family-vacation">Family Vacation</h3>
+          <p data-translate="family-desc">Perfect holidays for the whole family with kids’ entertainment, safe beaches, and family-friendly hotels.</p>
+          <p><strong data-translate="price-family">From $600 / family</strong></p>
+          <button data-translate="more-details">More details</button>
         </div>
-
         <div class="card">
           <img src="images/romantic.jpg" alt="Romantic Tour">
-          <h3>Romantic Tour</h3>
-          <p>Unforgettable moments for couples with romantic dinners, spa treatments, and private beaches.</p>
-          <p><strong>From $800 / couple</strong></p>
-          <button>More details</button>
+          <h3 data-translate="romantic-tour">Romantic Tour</h3>
+          <p data-translate="romantic-desc">Unforgettable moments for couples with romantic dinners, spa treatments, and private beaches.</p>
+          <p><strong data-translate="price-couple">From $800 / couple</strong></p>
+          <button data-translate="more-details">More details</button>
         </div>
-
         <div class="card">
           <img src="images/beach.jpg" alt="Beach Tour">
-          <h3>Beach Tour</h3>
-          <p>Relax on the best beaches with crystal clear water, white sand, and tropical climate.</p>
-          <p><strong>From $500 / person</strong></p>
-          <button>More details</button>
+          <h3 data-translate="beach-tour">Beach Tour</h3>
+          <p data-translate="beach-desc">Relax on the best beaches with crystal clear water, white sand, and tropical climate.</p>
+          <p><strong data-translate="price-person">From $500 / person</strong></p>
+          <button data-translate="more-details">More details</button>
         </div>
-
         <div class="card">
           <img src="images/culture.jpg" alt="Cultural Tour">
-          <h3>Cultural Tour</h3>
-          <p>Discover history and culture by visiting museums, landmarks, and cultural events.</p>
-          <p><strong>From $450 / person</strong></p>
-          <button>More details</button>
+          <h3 data-translate="cultural-tour">Cultural Tour</h3>
+          <p data-translate="cultural-desc">Discover history and culture by visiting museums, landmarks, and cultural events.</p>
+          <p><strong data-translate="price-person">From $450 / person</strong></p>
+          <button data-translate="more-details">More details</button>
         </div>
       </section>
     </main>
@@ -106,13 +104,11 @@
         <a href="#">✉️</a>
       </div>
     </footer>
-
   </div>
-
-  <script src="script.js"></script> 
-
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
