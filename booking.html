@@ -46,9 +46,19 @@
     /* ✅ Modal Destination Styling */
     .list-group-item {
       cursor: pointer;
+      transition: background 0.3s ease;
     }
     .list-group-item:hover {
       background-color: #e9ecef;
+    }
+
+    /* ✅ Animated confirmation */
+    #discountMsg {
+      transition: opacity 0.5s ease;
+      opacity: 0;
+    }
+    #discountMsg.show {
+      opacity: 1;
     }
   </style>
 </head>
@@ -161,6 +171,8 @@
               </div>
             </div>
 
+            <p id="discountMsg" class="text-center text-success mt-3 fw-semibold"></p>
+
             <div class="mt-4 text-center">
               <button type="submit" class="btn btn-primary btn-lg">Book Now</button>
               <button type="reset" class="btn btn-outline-secondary btn-lg ms-2">Reset</button>
@@ -176,28 +188,15 @@
     <div class="container">
       <p>&copy; 2025 Tripify Travel Agency | All Rights Reserved</p>
       <p>Team Members: Zhannur Meirambek, Symbat Zhuman, Ayazhan Orynbasar, Gulnaz Nurseit</p>
-      <div>
-        <a href="#" class="text-white mx-2">🌐</a>
-        <a href="#" class="text-white mx-2">📷</a>
-        <a href="#" class="text-white mx-2">✉️</a>
-      </div>
     </div>
   </footer>
 
   <!-- ✅ Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- ✅ JavaScript for Popup and Validation -->
-  <script>
-    // Popup Logic
-    const chooseBtn = document.getElementById("chooseDestinationBtn");
-    const destinationInput = document.getElementById("destination");
-    const modal = new bootstrap.Modal(document.getElementById("destinationModal"));
+ = new bootstrap.Modal(document.getElementById("destinationModal"));
 
-    chooseBtn.addEventListener("click", () => {
-      modal.show();
-    });
-
+    chooseBtn.addEventListener("click", () => modal.show());
     document.querySelectorAll("#destinationModal .list-group-item").forEach(item => {
       item.addEventListener("click", () => {
         destinationInput.value = item.textContent;
@@ -205,18 +204,81 @@
       });
     });
 
-    // Form Validation
-    (function() {
-      'use strict';
-      const form = document.getElementById('bookingForm');
-      form.addEventListener('submit', function(event) {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    })();
+  
+    <script>
+ 
+  const chooseBtn = document.getElementById("chooseDestinationBtn");
+  const destinationInput = document.getElementById("destination");
+  const modal = new bootstrap.Modal(document.getElementById("destinationModal"));
+
+  chooseBtn.addEventListener("click", () => modal.show());
+  document.querySelectorAll("#destinationModal .list-group-item").forEach(item => {
+    item.addEventListener("click", () => {
+      destinationInput.value = item.textContent;
+      modal.hide();
+    });
+  });
+
+ 
+  const discountRules = [
+    { people: 1, discount: 0 },
+    { people: 5, discount: 10 },
+    { people: 10, discount: 15 },
+    { people: 15, discount: 20 }
+  ];
+
+  const peopleInput = document.getElementById("people");
+  const discountMsg = document.getElementById("discountMsg");
+
+  peopleInput.addEventListener("input", () => {
+    const travelers = parseInt(peopleInput.value) || 1;
+    const discount = discountRules
+      .filter(rule => travelers >= rule.people)
+      .map(rule => rule.discount)
+      .pop() || 0;
+
+    if (discount > 0) {
+      discountMsg.textContent = `🎁 Group discount applied: ${discount}% off!`;
+      discountMsg.classList.add("show");
+    } else {
+      discountMsg.textContent = "";
+      discountMsg.classList.remove("show");
+    }
+  });
+
+
+  const successSound = new Audio("archivo.mp3"); // успех
+  const errorSound = new Audio("error.mp3");   // ошибка
+
+  const form = document.getElementById("bookingForm");
+  const resetBtn = form.querySelector('button[type="reset"]');
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      errorSound.currentTime = 0;
+      errorSound.play().catch(() => {});
+    } else {
+      successSound.currentTime = 0;
+      successSound.play().catch(() => {});
+      alert("🎉 Booking confirmed successfully!");
+      form.reset();
+      discountMsg.textContent = "";
+    }
+
+    form.classList.add("was-validated");
+  });
+
+  resetBtn.addEventListener("click", () => {
+    successSound.currentTime = 0;
+    successSound.play().catch(() => {});
+    discountMsg.textContent = "";
+  });
+</script>
+
+💡 What changed (and why it now works)
+Fix
   </script>
 </body>
 </html>
