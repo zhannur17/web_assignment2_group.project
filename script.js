@@ -398,3 +398,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+/*Symbat */
+
+$(document).ready(function() {
+  $('#search').on('keyup', function() {
+    var query = $(this).val().toLowerCase();
+    $('.card').filter(function() {
+      $(this).toggle($(this).find('h3').text().toLowerCase().indexOf(query) > -1);
+    });
+  });
+});
+
+
+$(document).ready(function() {
+  var tourNames = ['Family Vacation', 'Romantic Tour', 'Beach Tour', 'Cultural Tour'];
+
+  $('#search').on('keyup', function() {
+    var query = $(this).val().toLowerCase();
+    var suggestions = tourNames.filter(function(name) {
+      return name.toLowerCase().includes(query);
+    });
+
+    $('#autocomplete-suggestions').empty().show();
+
+    suggestions.forEach(function(suggestion) {
+      $('#autocomplete-suggestions').append('<li>' + suggestion + '</li>');
+    });
+
+    if (suggestions.length === 0) {
+      $('#autocomplete-suggestions').hide();
+    }
+  });
+
+  $('#autocomplete-suggestions').on('click', 'li', function() {
+    $('#search').val($(this).text());
+    $('#autocomplete-suggestions').hide();
+  });
+});
