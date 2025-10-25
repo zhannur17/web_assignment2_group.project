@@ -841,6 +841,42 @@ h1, h2, h3 {
 
 
 
+/* Symbat */
+#search-section {
+  text-align: center;
+  padding: 20px;
+}
+
+#search {
+  padding: 10px;
+  width: 50%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#autocomplete-suggestions {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  display: none;
+  background: #3dcded;
+  border: 1px solid #055b61;
+  width: 50%;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 9999;
+}
+
+#autocomplete-suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#autocomplete-suggestions li:hover {
+  background-color: #cd246e;
+}
 
 
 
