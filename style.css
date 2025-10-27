@@ -938,6 +938,28 @@ img[data-src] {
   opacity: 1;
 }
 
+/* Zhannur Assignment6*/
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #f4b400;
+  z-index: 9999;
+}
+
+#stats {
+  text-align: center;
+}
+
+#user-count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+
+
 
 
 
