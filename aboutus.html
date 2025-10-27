@@ -65,16 +65,20 @@
     .theme-btn {
       display: block;
       margin: 20px auto;
-
     }
+
     body.dark-mode .text-muted {
-  color: #cfcfcf !important;
+      color: #cfcfcf !important;
     }
+
     body.dark-mode .faq-answer {
-  color: #0dcaf0 !important;
+      color: #0dcaf0 !important;
     }
 
-
+    mark {
+      background-color: yellow;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -114,10 +118,10 @@
 
     <h2 class="mt-5 mb-4 text-center text-primary">Our Team</h2>
 
-    <!-- ✅ Your original team cards (unchanged) -->
+    <!-- ✅ Team Cards -->
     <div class="row g-4 text-center">
       <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card" style="height: 100%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 10px;">
+        <div class="card shadow-sm border-0 rounded-4">
           <img src="images/ayazhan.png.png" alt="Ayazhan" style="width:100%; height:300px; object-fit:cover;">
           <div class="card-body">
             <h5 class="card-title">Ayazhan Orynbasar</h5>
@@ -127,7 +131,7 @@
       </div>
 
       <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card" style="height: 100%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 10px;">
+        <div class="card shadow-sm border-0 rounded-4">
           <img src="images/zhannur.png.png" alt="Zhannur" style="width:100%; height:300px; object-fit:cover;">
           <div class="card-body">
             <h5 class="card-title">Zhannur Meirambek</h5>
@@ -137,7 +141,7 @@
       </div>
 
       <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card" style="height: 100%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 10px;">
+        <div class="card shadow-sm border-0 rounded-4">
           <img src="images/gulnaz.png.png" alt="Gulnaz" style="width:100%; height:300px; object-fit:cover;">
           <div class="card-body">
             <h5 class="card-title">Gulnaz Nurseit</h5>
@@ -147,7 +151,7 @@
       </div>
 
       <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card" style="height: 100%; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 10px;">
+        <div class="card shadow-sm border-0 rounded-4">
           <img src="images/symbat.png.png" alt="Symbat" style="width:100%; height:300px; object-fit:cover;">
           <div class="card-body">
             <h5 class="card-title">Symbat Zhuman</h5>
@@ -157,7 +161,17 @@
       </div>
     </div>
 
-    <!-- ✅ FAQ -->
+    <!-- ✅ Search Bar for FAQ -->
+    <div class="text-center mb-4 mt-5">
+      <input 
+        type="text" 
+        id="faqSearch" 
+        class="form-control w-50 mx-auto shadow-sm" 
+        placeholder="🔍 Search in FAQ..."
+      >
+    </div>
+
+    <!-- ✅ FAQ Section -->
     <section class="faq-section mt-5">
       <h2 class="text-center mb-4">FAQ</h2>
 
@@ -197,40 +211,80 @@
     </div>
   </footer>
 
-  <!-- ✅ Bootstrap JS -->
+  <!-- ✅ JS Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- ✅ Custom JavaScript -->
   <script>
-    // ✅ FAQ toggle + animation + sound
-    const faqItems = document.querySelectorAll('.faq-item');
+  $(function() {
+    // --- FAQ toggle with sound ---
     const clickSound = new Audio('https://www.soundjay.com/buttons/sounds/button-20.mp3');
+    $('.faq-answer').hide().css('opacity', 0);
 
-    faqItems.forEach(item => {
-      item.addEventListener('click', () => {
-        clickSound.play();
-        const ans = item.querySelector('.faq-answer');
-        const visible = ans.style.display === 'block';
-        ans.style.display = visible ? 'none' : 'block';
-        ans.style.opacity = visible ? 0 : 1;
+    $('.faq-item').off('click').on('click', function(e) {
+      if ($(e.target).is('a, button, input')) return;
+      const $ans = $(this).find('.faq-answer');
+      clickSound.play().catch(()=>{});
+      $ans.stop(true, true).slideToggle(180).queue(function(next){
+        $(this).css('opacity', $(this).is(':visible') ? 1 : 0);
+        next();
       });
     });
 
-    // ✅ Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      clickSound.play();
+    // --- Theme toggle ---
+    $('#themeToggle').on('click', function(){
+      $('body').toggleClass('dark-mode');
+      clickSound.play().catch(()=>{});
     });
 
-    // ✅ Date and Time
+    // --- Date and Time ---
     function updateDateTime() {
       const now = new Date();
       const options = { month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' };
-      document.getElementById('dateTime').textContent = now.toLocaleString('en-US', options);
+      $('#dateTime').text(now.toLocaleString('en-US', options));
     }
     updateDateTime();
     setInterval(updateDateTime, 60000);
+
+    // --- Search + Highlight in FAQ ---
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    $('#faqSearch').on('input', function() {
+      const query = $(this).val().trim();
+      const $faqItems = $('.faq-item');
+
+      if (query === '') {
+        $faqItems.show().each(function() {
+          const $h = $(this).find('h5');
+          const $p = $(this).find('.faq-answer p');
+          $h.html($h.text());
+          $p.html($p.text());
+        });
+        return;
+      }
+
+      const safe = escapeRegExp(query);
+      const re = new RegExp('(' + safe + ')', 'gi');
+
+      $faqItems.each(function() {
+        const $h = $(this).find('h5');
+        const $p = $(this).find('.faq-answer p');
+        const hText = $h.text();
+        const pText = $p.text();
+
+        if (re.test(hText) || re.test(pText)) {
+          $(this).show();
+          $h.html(hText.replace(re, '<mark>$1</mark>'));
+          $p.html(pText.replace(re, '<mark>$1</mark>'));
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  });
   </script>
 </body>
 </html>
