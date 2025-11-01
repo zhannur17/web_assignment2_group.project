@@ -25,15 +25,6 @@
         </ul>
     </header>
 
-    <div class="grid-layout">
-        <aside class="sidebar">
-            <h3>Main page</h3>
-            <ul>
-                <li>Quick Search</li>
-                <li>Our Services</li>
-                <li>About Us</li>
-            </ul>
-        </aside>
         <main class="main-content">
             <section id="top-banner">
                 <h1>Explore the World with Us</h1>
@@ -47,29 +38,9 @@
                 <p id="user-count" data-count="1000">0</p>
             </div>
 
-            <br>
-            <button id="submit-btn">Submit</button>
-            <div id="spinner" style="display:none;">Please wait...</div>
-
-
-
-
-            <br>
-            <p id="message"> Welcome to Tripify!</p>
-            <button id="update-message" class="btn primary">Click Me!</button>
-
 
             <section class="content-box">
-                <h2>Quick Tour Search</h2>
-                <form>
-                    <input type="text" placeholder="Enter destination">
-                    <input type="date">
-                    <button type="submit">Search</button>
-                </form>
-            </section>
-
-            <section class="content-box">
-                <h2>Booking Form</h2>
+                <h2>Register/Log in</h2>
                 <form>
                     <input type="text" placeholder="Full Name" required>
                     <input type="email" placeholder="Email" required>
@@ -84,35 +55,47 @@
                     <img src="images/beach.png" alt="Beach">
                     <h3>Beach Paradise</h3>
                     <p>Relax on sunny beaches with turquoise waters.</p>
-                    <button class="btn primary">Book Now</button>
+                    <button class="btn primary" onclick="window.location.href='booking.html'">Book Now</button>
+                    <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    </div>
+                    
+
                 </div>
                 <div class="card">
                     <img src="images/mountain.png" alt="Mountain">
                     <h3>Mountain Adventure</h3>
                     <p>Explore majestic mountains and scenic hiking trails.</p>
-                    <button class="btn primary">Book Now</button>
+                    <button class="btn primary" onclick="window.location.href='booking.html'">Book Now</button>
+                    <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    </div>
+                    
+                    
+
                 </div>
                 <div class="card">
                     <img src="images/safari.png" alt="Safari">
                     <h3>Safari Tour</h3>
                     <p>Experience wildlife and nature in its purest form.</p>
-                    <button class="btn primary">Book Now</button>
+                    <button class="btn primary" onclick="window.location.href='booking.html'">Book Now</button>
+                    <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    </div>
                 </div>
             </section>
-
-            <br>
-
-            <div class="rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-            </div>
-            <p id="rating-value"></p>
-
-
-
 
 
             <section class="content-box">
@@ -156,24 +139,6 @@
                 <p id="fact-text">Click the button to learn something new!</p>
                 <button id="fact-btn" class="btn primary">Show Random Fact</button>
             </section>
-
-
-            <button id="openPopup" class="btn primary">Subscribe</button>
-
-            <div class="popup">
-                <div class="popup-content">
-                    <span class="close-popup">&times;</span>
-                    <h3>Subscribe to Tripify</h3>
-                    <form>
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
-            <button id="change-bg" class="btn secondary">Change Background</button>
-
-
 
 
             <footer class="footer">
