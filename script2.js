@@ -28,11 +28,3 @@ $('#user-count').each(function() {
   });
 });
 
-$('#submit-btn').on('click', function() {
-  $(this).prop('disabled', true);
-  $('#spinner').show();
-  setTimeout(function() {
-    $('#spinner').hide();
-    $('#submit-btn').prop('disabled', false);
-  }, 2000); 
-});
