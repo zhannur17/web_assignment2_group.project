@@ -163,28 +163,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* New Zhannur */
 document.addEventListener("DOMContentLoaded", () => {
-  const stars = document.querySelectorAll(".star");
-  const ratingValue = document.getElementById("rating-value");
+  const cards = document.querySelectorAll('.card');
 
-  stars.forEach((star, index) => {
-    star.addEventListener("click", () => {
-      stars.forEach(s => s.classList.remove("active"));
-      for (let i = 0; i <= index; i++) {
-        stars[i].classList.add("active");
-      }
-      ratingValue.textContent = `Your rating: ${index + 1}/5`;
+  cards.forEach(card => {
+    const stars = card.querySelectorAll(".star"); 
+    const ratingValue = card.querySelector(".rating-value");  
+    stars.forEach((star, index) => {
+      star.addEventListener("click", () => {
+        stars.forEach(s => s.classList.remove("active"));
+
+        for (let i = 0; i <= index; i++) {
+          stars[i].classList.add("active");
+        }
+
+      });
     });
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const messageButton = document.getElementById("update-message");
-  const messageParagraph = document.getElementById("message");
-
-  messageButton.addEventListener("click", () => {
-    messageParagraph.textContent = "Thank you for visiting Tripify!";
-  });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   //READ MORE TOGGLE
@@ -229,11 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "t" || e.key === "T") {
-    document.body.classList.toggle("dark-theme");
-  }
-});
 
 /* Gulnaz */ 
 document.querySelector('.contact-form').addEventListener('submit', function(event) {
