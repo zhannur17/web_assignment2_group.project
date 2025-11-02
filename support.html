@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-   <div class="grid-layout">
+    <div class="grid-layout">
     <header class="header navbar">
       <div class="logo">Tripify</div>
       <ul class="nav-links">
@@ -23,23 +23,12 @@
       </ul>
     </header>
 
-    <aside class="sidebar">
-      <h3>Categories</h3>
-      <ul>
-        <li>Safety Guidelines</li>
-        <li>Travel Restrictions</li>
-        <li>How to Change Booking</li>
-      </ul>
-    </aside>
-
-    <main class="main-content">
-      <!-- Добавляем приветствие -->
-      <h2 id="greeting"></h2> <!-- Это место для вывода приветствия -->
+   
+    <main class="main-content" style="grid-column: 1 / -1;">
+      <h2 id="greeting"></h2>
 
       <h1>How can we help you?</h1>
-      <p style="text-align: center; color: #9b289d;">
-        <p>Get answers to your questions about bookings, destinations, and travel planning.</p>
-      </p>
+      <p>Get answers to your questions about bookings, destinations, and travel planning.</p>
 
       <section class="card">
         <div class="card-header">
@@ -55,15 +44,6 @@
           </div>
 
           <div class="support-box">
-            <h3>General Inquiries</h3>
-            <p>Get help with bookings, modifications, cancellations, and other travel-related questions.</p>
-            <div class="buttons">
-              <button class="btn primary">Live Chat</button>
-              <button class="btn secondary">Email Us</button>
-            </div>
-          </div>
-
-          <div class="support-box">
             <h3>FAQ & Resources</h3>
             <ul class="faq-list">
               <li><i class="fas fa-file-alt"></i> Booking Help</li>
@@ -75,49 +55,41 @@
         </div>
       </section>
 
-<section class="card">
-  <h2>Still need help?</h2>
-  <p>Send us a message and we'll get back to you within 24 hours</p>
-  <form class="contact-form">
-    <label>Your Name</label>
-    <input type="text" placeholder="John Doe" required>
+      <section class="card">
+        <h2>Still need help?</h2>
+        <p>Send us a message and we'll get back to you within 24 hours</p>
+        <form class="contact-form">
+          <label>Your Name</label>
+          <input type="text" placeholder="John Doe" required>
 
-    <label>Email Address</label>
-    <input type="email" placeholder="john@example.com" required>
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com" required>
 
-    <label>Subject</label>
-    <input type="text" placeholder="What is this regarding?" required>
+          <label>Subject</label>
+          <input type="text" placeholder="What is this regarding?" required>
 
-    <label>Message</label>
-    <textarea placeholder="Please describe your issue in detail..." required></textarea>
+          <label>Message</label>
+          <textarea placeholder="Please describe your issue in detail..." required></textarea>
 
-    <button type="submit" class="btn submit">Send Message</button>
-  </form>
+          <button type="submit" class="btn submit">Send Message</button>
+        </form>
 
-
-  <div id="successMessage" style="display:none; color: green;">Your message was sent successfully!</div>
-
-
-  <audio id="successSound" src="sentmessage.mp3"></audio>
-</section>
-
-
-      <button class="change-bg-btn">Change Background Color</button>
+        <div id="successMessage" style="display:none; color: green;">Your message was sent successfully!</div>
+        <audio id="successSound" src="sentmessage.mp3"></audio>
+      </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <p>&copy; 2025 Travel Agency | All Rights Reserved</p>
-        <p>Team Members: Zhannur, Symbat, Ayazhan, Gulnaz.</p>
-        <div class="socials">
-          <a href="#">🌐</a>
-          <a href="#">📷</a>
-          <a href="#">✉️</a>
-        </div>
+<footer class="footer">
+      <p>&copy; 2025 Travel Agency | All Rights Reserved</p>
+      <p>Team Members: Zhannur, Symbat, Ayazhan, Gulnaz.</p>
+      <div class="socials">
+        <a href="#">🌐</a>
+        <a href="#">📷</a>
+        <a href="#">✉️</a>
       </div>
     </footer>
-
-    <script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
 
