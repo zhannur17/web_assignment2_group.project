@@ -1,6 +1,5 @@
 /* Symbat */ 
 
-
 document.addEventListener("DOMContentLoaded", function() {
   const sidebarHeaders = document.querySelectorAll('.accordion-header');
   sidebarHeaders.forEach(header => {
