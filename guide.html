@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Travel Experts - Travel Guide</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-  <div class="grid-layout">
-    
+
+ <div class="grid-layout">
     <header class="header navbar">
       <div class="logo">Tripify</div>
       <ul class="nav-links">
@@ -27,110 +28,93 @@
     <aside class="sidebar">
       <h3>Categories</h3>
       <ul>
-        <li>Airport Hacks</li>
-        <li>Packing Guide</li>
-        <li>Visa & Documents</li>
+        <li><a href="#visa-documents"><i class="fas fa-passport"></i> Visas & Documents</a></li>
+        <li><a href="#language-tips"><i class="fas fa-suitcase-rolling"></i> Language Tips</a></li>
+        <li><a href="#local-culture"><i class="fas fa-globe"></i> Local Culture</a></li>
+        <li><a href="#lifehacks"><i class="fas fa-lightbulb"></i> Travel Lifehacks</a></li>
       </ul>
     </aside>
 
     <main class="main-content">
       <section>
         <h1><i class="fas fa-plane-departure"></i> Travel Guide</h1>
-        <p style="text-align: center; color: #9b289d;">Visas • Luggage • Culture • Lifehacks</p>
+        <p style="text-align:center; color:#9b289d;">Visas • Luggage • Culture • Lifehacks</p>
       </section>
 
       <section class="guide-photo">
-        <!-- Главное изображение тоже с ленивой загрузкой -->
-        <img data-src="images/karta.mira.jpg" src="images/voda.jpg" alt="World Map" class="advice-img">
+        <img src="karta.mira.jpg" alt="World Map" class="hero-img"/>
       </section>
 
-      <main class="container">
-
-        <section class="advice-section">
-          <!-- Ленивая загрузка для всех изображений -->
-          <img data-src="паспорт.png" src="images/voda.jpg" alt="Visas and Documents" class="advice-img">
-          <h2><i class="fas fa-passport"></i> Visas & Documents</h2>
-          <p>
-            <i class="fas fa-id-card"></i> Make sure your <b>passport</b> is valid for at least 6 months after your trip. <br>
-            <i class="fas fa-stamp"></i> Check <b>visa requirements</b> of your destination country and apply in advance. <br>
-            <i class="fas fa-copy"></i> Keep <b>copies of documents</b> (passport, tickets, insurance) in a separate place.  
-          </p>
-        </section>
-
-        <section class="advice-section">
-          <img data-src="images/иностранные-языки.jpg" src="images/voda.jpg" alt="Language Tips" class="advice-img">
-          <h2><i class="fas fa-suitcase-rolling"></i> Language Tips</h2>
-          <p>
-            <i class="fas fa-box-open"></i> <b>Pack light</b> — bring only essentials, you can buy many things locally. <br>
-            <i class="fas fa-briefcase-medical"></i> Always keep <b>medications, documents, valuables</b> and a change of clothes in your carry-on. <br>
-            <i class="fas fa-weight-hanging"></i> Check <b>baggage weight limits</b> to avoid extra charges.  
-          </p>
-        </section>
-
-        <section class="advice-section">
-          <img data-src="images/Cultural.jpg" src="voda.jpg" alt="Local Culture" class="advice-img">
-          <h2><i class="fas fa-globe"></i> Local Culture</h2>
-          <p>
-            <i class="fas fa-users"></i> Learn about <b>local customs</b> and traditions to avoid awkward situations. <br>
-            <i class="fas fa-language"></i> Study a few <b>basic phrases</b> in the local language to connect with people. <br>
-            <i class="fas fa-tshirt"></i> Respect <b>dress codes</b>, especially at religious or cultural sites.  
-          </p>
-        </section>
-
-        <section class="advice-section">
-          <img data-src="images/лайфхак.jpg" src="voda.jpg" alt="Travel Lifehacks" class="advice-img">
-          <h2><i class="fas fa-lightbulb"></i> Travel Lifehacks</h2>
-          <p>
-            <i class="fas fa-map-marked-alt"></i> Download <b>offline maps</b> and translation apps before traveling. <br>
-            <i class="fas fa-coins"></i> Always have some <b>local currency</b> for small purchases and emergencies. <br>
-            <i class="fas fa-plug"></i> Bring a <b>universal adapter</b> and a power bank for your devices.  
-          </p>
-        </section>
-
-        <section class="tip-of-day">
-          <img data-src="images/совет-дня.jpg" src="voda.jpg" alt="Tip of the Day" class="advice-img">
-          <h3><i class="fas fa-lightbulb"></i> Tip of the Day</h3>
-          <p>
-            Roll your clothes instead of folding them — this saves space in your suitcase 
-            and keeps them less wrinkled!
-          </p>
-        </section>
-
-        <!-- Кнопка для открытия формы подписки -->
-        <button class="popup-btn">Subscribe</button>
-
-        <!-- Всплывающее окно с формой -->
-        <div class="popup-form" style="display:none;">
-          <div class="popup-content">
-            <button class="close-btn">X</button>
-            <h2>Subscribe to our newsletter</h2>
-            <form>
-              <input type="email" placeholder="Enter your email">
-              <button type="submit">Subscribe</button>
-            </form>
+      <div class="container-guide">
+        <!-- Visas & Documents -->
+        <section class="advice-section" id="visa-documents">
+          <img src="паспорт.png" alt="Visas and Documents" class="advice-img"/>
+          <div class="advice-text">
+            <h2><i class="fas fa-passport"></i> Visas & Documents</h2>
+            <p>
+              <i class="fas fa-id-card"></i> Make sure your <b>passport</b> is valid for at least 6 months after your trip. <br/>
+              <i class="fas fa-stamp"></i> Check <b>visa requirements</b> of your destination country and apply in advance. <br/>
+              <i class="fas fa-copy"></i> Keep <b>copies of documents</b> (passport, tickets, insurance) in a separate place.
+            </p>
           </div>
-        </div>
+        </section>
 
-      </main>
-
-      <footer>
-        <div class="footer-content">
-          <p>&copy; 2025 Travel Agency | All Rights Reserved</p>
-          <p>Team Members: Zhannur, Symbat, Ayazhan, Gulnaz.</p>
-          <div class="socials">
-            <a href="#">🌐</a>
-            <a href="#">📷</a>
-            <a href="#">✉️</a>
+        <!-- Language Tips -->
+        <section class="advice-section" id="language-tips">
+          <img src="иностранные-языки.jpg" alt="Language Tips" class="advice-img"/>
+          <div class="advice-text">
+            <h2><i class="fas fa-suitcase-rolling"></i> Language Tips</h2>
+            <p>
+              <i class="fas fa-box-open"></i> <b>Pack light</b> — bring only essentials, you can buy many things locally. <br/>
+              <i class="fas fa-briefcase-medical"></i> Always keep <b>medications, documents, valuables</b> and a change of clothes in your carry-on. <br/>
+              <i class="fas fa-weight-hanging"></i> Check <b>baggage weight limits</b> to avoid extra charges.
+            </p>
           </div>
-        </div>
-      </footer>
+        </section>
 
+        <!-- Local Culture -->
+        <section class="advice-section" id="local-culture">
+          <img src="Cultural.jpg" alt="Local Culture" class="advice-img"/>
+          <div class="advice-text">
+            <h2><i class="fas fa-globe"></i> Local Culture</h2>
+            <p>
+              <i class="fas fa-users"></i> Learn about <b>local customs</b> and traditions to avoid awkward situations. <br/>
+              <i class="fas fa-language"></i> Study a few <b>basic phrases</b> in the local language to connect with people. <br/>
+              <i class="fas fa-tshirt"></i> Respect <b>dress codes</b>, especially at religious or cultural sites.
+            </p>
+          </div>
+        </section>
+
+        <!-- Travel Lifehacks -->
+        <section class="advice-section" id="lifehacks">
+          <img src="лайфхак.jpg" alt="Travel Lifehacks" class="advice-img"/>
+          <div class="advice-text">
+            <h2><i class="fas fa-lightbulb"></i> Travel Lifehacks</h2>
+            <p>
+              <i class="fas fa-map-marked-alt"></i> Download <b>offline maps</b> and translation apps before traveling. <br/>
+              <i class="fas fa-coins"></i> Always have some <b>local currency</b> for small purchases and emergencies. <br/>
+              <i class="fas fa-plug"></i> Bring a <b>universal adapter</b> and a power bank for your devices.
+            </p>
+          </div>
+        </section>
+
+
+      <footer class="footer">
+      <p>&copy; 2025 Travel Agency | All Rights Reserved</p>
+      <p>Team Members: Zhannur, Symbat, Ayazhan, Gulnaz.</p>
+      <div class="socials">
+        <a href="#">🌐</a>
+        <a href="#">📷</a>
+        <a href="#">✉️</a>
+      </div>
+    </footer>
     </main>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
