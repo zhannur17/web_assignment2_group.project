@@ -1400,6 +1400,66 @@ h1, h2 {
   font-size: 14px;
 }
 
+/* NEW Final */
+/* Центровка текста под формой входа/регистрации */
+.toggle-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.95em;
+}
+
+.toggle-text a {
+  color: #ffcc00; /* можно заменить цвет на свой */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.toggle-text a:hover {
+  text-decoration: underline;
+}
+#authForm button {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#authForm button:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.weather-card {
+  background: #f7f9fc;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.weather-card img {
+  width: 80px;
+  height: 80px;
+}
+
+
+
+
+
+
 
 
 
