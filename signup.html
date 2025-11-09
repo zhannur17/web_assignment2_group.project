@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | Tripify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Tripify</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Log In</a></li>
+    </ul>
+  </header>
+
+  <main class="main-content">
+    <h1>Create Your Account</h1>
+    <form id="signupForm" class="contact-form">
+
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" required>
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" required>
+
+      <label for="birthDate">Date of Birth</label>
+      <input type="date" id="birthDate" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p class="toggle-text">
+      Already have an account? <a href="login.html">Log In</a>
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Tripify | All Rights Reserved</p>
+  </footer>
+
+  <script src="script-auth.js"></script>
+</body>
+</html>
