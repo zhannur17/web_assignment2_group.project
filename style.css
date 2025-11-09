@@ -1559,6 +1559,30 @@ img.img-fluid {
   border-radius: 8px;
 }
 
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.profile-page .main-content {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+.profile-page .footer {
+  background-color: #1c2530;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+
+
+
 
 
 
