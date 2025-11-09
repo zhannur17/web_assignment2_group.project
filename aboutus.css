@@ -1,1 +1,180 @@
+/* === Navigation Bar === */
+.navbar {
+  background-color: #1a2530 !important;
+  width: 1473px;
+  height: 76.08px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-family: Arial, sans-serif;
+  margin: 0 auto; /* чтобы центрировать навбар по горизонтали */
+}
 
+
+/* Tripify — логотип */
+.navbar .logo {
+  color: #f4b400; /* жёлтый цвет */
+  font-weight: 700;
+  font-size: 28.8px;
+}
+.navbar-brand {
+  color: #f4b400 !important;
+  font-size: 28.8px !important; /* Увеличенный размер */
+  font-weight: 700 !important;
+  margin-left: -12px; /* сдвигает логотип чуть левее */
+
+}
+
+/* Навигационные ссылки */
+.navbar ul {
+  list-style: none;
+  margin-right: -20px; /* сдвигает логотип чуть левее */
+  padding: 0;
+  display: flex;
+  gap: 4px; /* расстояние между пунктами */
+
+
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17.6px;
+  transition: color 0.2s ease;
+}
+
+/* Hover — жёлтый при наведении */
+.navbar ul li a:hover {
+  color: #ffcc00;
+}
+
+/* === Theme Toggle === */
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  margin-left: 10px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}
+
+/* === Footer === */
+footer {
+  background-color: #1a2530;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+footer p {
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+footer p:hover {
+  color: #ffcc00;
+}
+
+/* === Body and Headings === */
+body {
+  background-color: #ffffff;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3 {
+  color: #007bff;
+}
+
+/* === FAQ Section === */
+.faq-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.faq-item:hover {
+  background: #e9ecef;
+  transform: scale(1.02);
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#dateTime {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* === Dark Mode === */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #0dcaf0;
+}
+
+
+body.dark-mode .faq-answer {
+  color: #0dcaf0 !important;
+}
+
+mark {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* === Theme Toggle Position === */
+.theme-toggle-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* === Mobile Fix === */
+@media (max-width: 768px) {
+  .theme-toggle-container {
+    position: static;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+}
