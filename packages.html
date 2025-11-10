@@ -4,114 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tour Packages</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .card-container {
+        margin-top: 70px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+  </style>
 </head>
-<body>
-  
-  <div class="grid-layout">
-    <header class="header navbar">
-      <div class="logo">Tripify</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="destination.html">Destinations</a></li>
-        <li><a href="packages.html">Packages</a></li>
-        <li><a href="offers.html">Special Offers</a></li>
-        <li><a href="guide.html">Guide</a></li>
-        <li><a href="booking.html">Booking</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-      </ul>
+<body class="d-flex flex-column min-vh-100">
 
-      <select id="language-selector">
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-        <option value="kk">Қазақша</option>
-      </select>
-    </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-warning" href="#">Tripify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="destination.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="offers.html">Special Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-
-    <aside class="sidebar">
-      <h3 data-translate="categories">Categories</h3>
-      <ul>
-        <li class="accordion-item">
-          <div class="accordion-header" data-translate="family-tours">Family Tours</div>
-          <div class="accordion-content">
-            <p data-translate="family-desc">Trips perfect for families with kids, safe beaches, and family-friendly hotels.</p>
-          </div>
-        </li>
-        <li class="accordion-item">
-          <div class="accordion-header" data-translate="romantic-tours">Romantic Tours</div>
-          <div class="accordion-content">
-            <p data-translate="romantic-desc">Unforgettable moments for couples with romantic dinners and spa treatments.</p>
-          </div>
-        </li>
-        <li class="accordion-item">
-          <div class="accordion-header" data-translate="beach-tours">Beach Tours</div>
-          <div class="accordion-content">
-            <p data-translate="beach-desc">Relax on the best beaches with crystal clear water and tropical climate.</p>
-          </div>
-        </li>
-        <li class="accordion-item">
-          <div class="accordion-header" data-translate="cultural-tours">Cultural Tours</div>
-          <div class="accordion-content">
-            <p data-translate="cultural-desc">Discover museums, landmarks, and cultural events around the world.</p>
-          </div>
-        </li>
-      </ul>
-    </aside>
-
-    <main class="main-content" id="offers-page">
-      <section>
-        <h1 data-translate="our-tour-packages">Our Tour Packages</h1>
-        <p style="text-align: center; color: #9b289d;" data-translate="choose-perfect-trip">Choose the perfect trip for yourself and your loved ones</p>
-      <input type="text" id="search" placeholder="Search for tour packages...">
-      <ul id="autocomplete-suggestions"></ul>
+  <main class="flex-grow-1 main-content">
+    <section>
+      <h1 class="text-center py-5">Our Tour Packages</h1>
+      <p class="text-center" style="color: #9b289d;">
+        Choose the perfect trip for yourself and your loved ones
+      </p>
+      <div class="text-center mb-4">
+        <input type="text" id="search" class="form-control w-50" placeholder="Search for tour packages...">
+        <ul id="autocomplete-suggestions"></ul>
+      </div>
     </section>
 
+    <div class="d-flex">
+      <aside class="sidebar">
+        <h3>Categories</h3>
+        <div class="accordion" id="categoryAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFamily">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFamily" aria-expanded="true" aria-controls="collapseFamily">
+                Family Tours
+              </button>
+            </h2>
+            <div id="collapseFamily" class="accordion-collapse collapse show" aria-labelledby="headingFamily" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">
+                Trips perfect for families with kids, safe beaches, and family-friendly hotels.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingRomantic">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRomantic" aria-expanded="false" aria-controls="collapseRomantic">
+                Romantic Tours
+              </button>
+            </h2>
+            <div id="collapseRomantic" class="accordion-collapse collapse" aria-labelledby="headingRomantic" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">
+                Unforgettable moments for couples with romantic dinners, spa treatments, and private beaches.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingBeach">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBeach" aria-expanded="false" aria-controls="collapseBeach">
+                Beach Tours
+              </button>
+            </h2>
+            <div id="collapseBeach" class="accordion-collapse collapse" aria-labelledby="headingBeach" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">
+                Relax on the best beaches with crystal clear water, white sand, and tropical climate.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCultural">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCultural" aria-expanded="false" aria-controls="collapseCultural">
+                Cultural Tours
+              </button>
+            </h2>
+            <div id="collapseCultural" class="accordion-collapse collapse" aria-labelledby="headingCultural" data-bs-parent="#categoryAccordion">
+              <div class="accordion-body">
+                Discover history and culture by visiting museums, landmarks, and cultural events.
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
 
-      <section class="card-container">
-        <div class="card">
-          <img src="images/family.jpg" alt="Family Tour">
-          <h3 data-translate="family-vacation">Family Vacation</h3>
-          <p data-translate="family-desc">Perfect holidays for the whole family with kids’ entertainment, safe beaches, and family-friendly hotels.</p>
-          <p><strong data-translate="price-family">From $600 / family</strong></p>
-        </div>
-        <div class="card">
-          <img src="images/romantic.jpg" alt="Romantic Tour">
-          <h3 data-translate="romantic-tour">Romantic Tour</h3>
-          <p data-translate="romantic-desc">Unforgettable moments for couples with romantic dinners, spa treatments, and private beaches.</p>
-          <p><strong data-translate="price-couple">From $800 / couple</strong></p>
-        </div>
-        <div class="card">
-          <img src="images/beach.jpg" alt="Beach Tour">
-          <h3 data-translate="beach-tour">Beach Tour</h3>
-          <p data-translate="beach-desc">Relax on the best beaches with crystal clear water, white sand, and tropical climate.</p>
-          <p><strong data-translate="price-person">From $500 / person</strong></p>
-        </div>
-        <div class="card">
-          <img src="images/culture.jpg" alt="Cultural Tour">
-          <h3 data-translate="cultural-tour">Cultural Tour</h3>
-          <p data-translate="cultural-desc">Discover history and culture by visiting museums, landmarks, and cultural events.</p>
-          <p><strong data-translate="price-person">From $450 / person</strong></p>
+      <section class="card-container" style="flex-grow: 1;">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4" id="card-container">
+          <div class="col card-item">
+            <div class="card h-100">
+              <img src="images/family.jpg" class="card-img-top" alt="Family Tour">
+              <div class="card-body">
+                <h5 class="card-title">Family Vacation</h5>
+                <p class="card-text">Perfect holidays for the whole family with kids’ entertainment, safe beaches, and family-friendly hotels.</p>
+                <p><strong>From $600 / family</strong></p>
+                <a href="booking.html"><button class="btn btn-success">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col card-item">
+            <div class="card h-100">
+              <img src="images/romantic.jpg" class="card-img-top" alt="Romantic Tour">
+              <div class="card-body">
+                <h5 class="card-title">Romantic Tour</h5>
+                <p class="card-text">Unforgettable moments for couples with romantic dinners, spa treatments, and private beaches.</p>
+                <p><strong>From $800 / couple</strong></p>
+                <a href="booking.html"><button class="btn btn-success">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col card-item">
+            <div class="card h-100">
+              <img src="images/beach.jpg" class="card-img-top" alt="Beach Tour">
+              <div class="card-body">
+                <h5 class="card-title">Beach Tour</h5>
+                <p class="card-text">Relax on the best beaches with crystal clear water, white sand, and tropical climate.</p>
+                <p><strong>From $500 / person</strong></p>
+                <a href="booking.html"><button class="btn btn-success">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col card-item">
+            <div class="card h-100">
+              <img src="images/culture.jpg" class="card-img-top" alt="Cultural Tour">
+              <div class="card-body">
+                <h5 class="card-title">Cultural Tour</h5>
+                <p class="card-text">Discover history and culture by visiting museums, landmarks, and cultural events.</p>
+                <p><strong>From $450 / person</strong></p>
+                <a href="booking.html"><button class="btn btn-success">Book Now</button></a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
+  </main>
 
-    <footer class="footer">
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
       <p>&copy; 2025 Travel Agency | All Rights Reserved</p>
       <p>Team Members: Zhannur, Symbat, Ayazhan, Gulnaz.</p>
-      <div class="socials">
-        <a href="#">🌐</a>
-        <a href="#">📷</a>
-        <a href="#">✉️</a>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="text-white">🌐</a>
+        <a href="#" class="text-white">📷</a>
+        <a href="#" class="text-white">✉️</a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
-  <script src="script4.js"></script>
-  <script src="script3.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#search').on('keyup', function() {
+        var query = $(this).val().toLowerCase();
+        $('.card-item').filter(function() {
+          var title = $(this).find('.card-title').text().toLowerCase();
+          var description = $(this).find('.card-text').text().toLowerCase();
+          $(this).toggle(title.indexOf(query) > -1 || description.indexOf(query) > -1);
+        });
+      });
+
+      var tourNames = ['Family Vacation', 'Romantic Tour', 'Beach Tour', 'Cultural Tour'];
+
+      $('#search').on('keyup', function() {
+        var query = $(this).val().toLowerCase();
+        var suggestions = tourNames.filter(function(name) {
+          return name.toLowerCase().includes(query);
+        });
+
+        $('#autocomplete-suggestions').empty().show();
+
+        suggestions.forEach(function(suggestion) {
+          $('#autocomplete-suggestions').append('<li>' + suggestion + '</li>');
+        });
+
+        if (suggestions.length === 0) {
+          $('#autocomplete-suggestions').hide();
+        }
+      });
+
+      $('#autocomplete-suggestions').on('click', 'li', function() {
+        $('#search').val($(this).text());
+        $('#autocomplete-suggestions').hide();
+      });
+    });
+  </script>
+
 </body>
 </html>
 
